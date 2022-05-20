@@ -9,11 +9,21 @@
 
 ## Build Artemis image
 
+### 官方方案
+
 ```
 ./prepare-docker.sh --from-release --artemis-version 2.22.0
 cd _TMP_/artemis/2.22.0
+#准备二进制bin目录
+tar -zxvf apache-artemis-2.22.0-bin.tar.gz; cp -r ./apache*/*  ./
 docker build -f ./docker/Dockerfile-debian -t artemis-debian .
 ```
+
+但构建的容器运行报错，暂无解决方案  
+
+### 第三方镜像
+
+基于官方的 docker 文件构建：https://github.com/ls1intum/activemq-broker-docker/pkgs/container/activemq-broker-docker-centos
 
 ## Docker for Classic
 
@@ -24,3 +34,13 @@ docker build -f ./docker/Dockerfile-debian -t artemis-debian .
 * https://github.com/TremoloSecurity/activemq-docker
 * https://github.com/quotidian-ennui/docker-activemq
 * https://hub.docker.com/r/rmohr/activemq/dockerfile/#!
+
+其中 alfresco 维护较好，故选用它
+
+## Multiply version
+
+command `docker-compose --profile classic up -d`
+
+or
+
+delete profiles tag at docker-compose.yml which you want to use
