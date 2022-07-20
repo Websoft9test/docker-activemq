@@ -97,7 +97,7 @@ sudo docker compose up -d
 
 | 用户名    | 密码 |
 | ------- | -------- |
-|  admin | 123456  |
+|  admin | 12345678  |
 
 ## 文档
 

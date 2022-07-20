@@ -91,7 +91,7 @@ By default, the available users are:
 
 | Username    | Password |
 | ------- | -------- |
-|  admin | 123456  |
+|  admin | 12345678  |
 
 ## Documentation
 
